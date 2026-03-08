@@ -133,9 +133,8 @@ class App(tk.Tk):
         self.age_entry = tk.Spinbox(self.data_frame, from_=18, to=150)        # Age
         self.age_entry.grid(row=1, column=1)
         
-        # Calendar creation and language change to English (or keeping Spanish locale for the input if preferred, but usually 'C' is neutral)
-        # We will keep the default locale or set it to a neutral one, but the DateEntry pattern will be kept for formatting consistency.
-        locale.setlocale(locale.LC_TIME, '') # Reset or set to a default locale
+        # Calendar 
+        locale.setlocale(locale.LC_TIME, '') 
         self.calendar = DateEntry(self.data_frame, date_pattern="dd/MM/yyyy")
         self.date_label = tk.Label(self.data_frame, text="Registration Date")
         self.date_label.grid(row=2, column=0)
@@ -269,4 +268,5 @@ if __name__ == '__main__':
     app = App()
     app.update_list()
     app.protocol("WM_DELETE_WINDOW", app.close_window)
+
     app.mainloop()
